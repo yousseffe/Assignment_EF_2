@@ -19,8 +19,8 @@ namespace Assignment_EF_2.Entities
         public string Description { get; set; }
         [Required]
         public int Duration { get; set; }
-
-        [ForeignKey("Top_ID")]
+        [ForeignKey(nameof(Topic))]
+        public int? Top_ID { get; set; }
         public Topic Topic { get; set; }
 
         public ICollection<Instructor> Instructors { get; set; } = new HashSet<Instructor>();

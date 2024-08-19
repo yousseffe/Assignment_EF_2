@@ -15,7 +15,9 @@ namespace Assignment_EF_2.Entities
         [MaxLength(30)]
         public string Name { get; set; }
         public DateTime HiringDate { get; set; } = DateTime.Now;
-        [ForeignKey("Ins_ID")]
-        public Instructor? Instructor { get; set; }
+        public int? Ins_ID { get; set; }
+        public Instructor Instructor { get; set; }
+
+        public ICollection<Student> students { get; set; }
     }
 }

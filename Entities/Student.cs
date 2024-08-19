@@ -22,7 +22,9 @@ namespace Assignment_EF_2.Entities
 
         [Range(18, 60)]
         public int Age { get; set; }
-        [ForeignKey("Dept_ID")]
+
+        [ForeignKey("Department")]
+        public int? Dept_ID { get; set; }
         public Department Department { get; set; }
         public ICollection<Course> Courses { get; set; } = new HashSet<Course>();
     }

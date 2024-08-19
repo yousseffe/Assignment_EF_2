@@ -17,6 +17,12 @@ namespace Assignment_EF_2.Contexts
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
 
+
+            modelBuilder.Entity<Department>()
+                    .HasOne(d => d.Instructor)
+                    .WithOne(I => I.Department)
+                    .HasForeignKey<Instructor>(I => I.Dept_ID);
+
             modelBuilder.Entity<Instructor>()
                 .HasMany(i => i.courses)
                 .WithMany(c => c.Instructors)

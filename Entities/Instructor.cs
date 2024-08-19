@@ -24,7 +24,8 @@ namespace Assignment_EF_2.Entities
         [Required]
         [Range (1, 100 , ErrorMessage = "HourRate must be at least 1. and max is 100 ")]
         public Double HourRate { get; set; }
-        [ForeignKey("Dept_ID")]
+
+        public int? Dept_ID { get; set; }
         public Department Department { get; set; }
         public ICollection<Course> courses { get; set; } = new HashSet<Course>();
     }
